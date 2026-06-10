@@ -18,7 +18,8 @@ The command generates both `downloads/manifest.json` and
 `assets/downloads-manifest.js`. The homepage loads the embedded JS manifest
 before `app.js`, then tries to refresh from `downloads/manifest.json` at
 runtime. If an installer file name changes with each release, the manifest
-records the new file name.
+records the new file name. MD5 checksums are calculated automatically and shown
+beside each download option.
 
 ## Expected Release Asset Names
 

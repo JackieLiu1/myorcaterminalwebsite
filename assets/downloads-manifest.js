@@ -12,6 +12,7 @@ window.__ORCATERMINAL_DOWNLOAD_MANIFEST__ = {
       "file": "OrcaTerminal-0.9.10-macOS-arm64.dmg",
       "version": "v0.9.10",
       "size": "33 MB",
+      "md5": "3a00a8e20ed25e62adc60ad11fb1f8ea",
       "updatedAt": "2026-06-09T08:43:57.000Z"
     },
     {
@@ -21,6 +22,7 @@ window.__ORCATERMINAL_DOWNLOAD_MANIFEST__ = {
       "file": "OrcaTerminal-0.9.10-Windows-x64.exe",
       "version": "v0.9.10",
       "size": "31 MB",
+      "md5": "efd19a6f9a0f15bb2ea12d0aa7934730",
       "updatedAt": "2026-06-05T01:48:25.000Z"
     },
     {
@@ -30,6 +32,7 @@ window.__ORCATERMINAL_DOWNLOAD_MANIFEST__ = {
       "file": "orcaterminal-0.9.10-amd64.deb",
       "version": "v0.9.10",
       "size": "19 MB",
+      "md5": "002bf19234277624e195a1cdea0f81c7",
       "updatedAt": "2026-06-04T12:20:17.000Z"
     },
     {
@@ -39,6 +42,7 @@ window.__ORCATERMINAL_DOWNLOAD_MANIFEST__ = {
       "file": "orcaterminal-0.9.10-arm64.deb",
       "version": "v0.9.10",
       "size": "20 MB",
+      "md5": "893f9a71fcad7f6b4585861c9878c7cc",
       "updatedAt": "2026-06-04T19:54:34.000Z"
     },
     {
@@ -48,6 +52,7 @@ window.__ORCATERMINAL_DOWNLOAD_MANIFEST__ = {
       "file": "orcaterminal-0.9.10-aarch64.rpm",
       "version": "v0.9.10",
       "size": "3.9 MB",
+      "md5": "3013a1eeb9bc9c9a6b25f1be8ca3f965",
       "updatedAt": "2026-06-08T01:37:19.374Z"
     }
   ]

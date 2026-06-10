@@ -1030,7 +1030,8 @@ kbd {
 }
 
 .download-variant strong,
-.download-variant small {
+.download-variant small,
+.download-variant code {
   display: block;
 }
 
@@ -1043,6 +1044,15 @@ kbd {
 .download-variant small {
   color: var(--muted);
   line-height: 1.5;
+}
+
+.download-variant code {
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+  color: rgba(100, 247, 255, 0.78);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .download-variant em {

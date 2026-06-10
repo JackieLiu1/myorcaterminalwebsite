@@ -1,3 +1,5 @@
+import { createHash } from "node:crypto";
+import { createReadStream } from "node:fs";
 import { mkdir, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -123,6 +125,16 @@ const formatSize = (bytes) => {
   return `${size >= 10 || unitIndex === 0 ? size.toFixed(0) : size.toFixed(1)} ${units[unitIndex]}`;
 };
 
+const hashFile = (filePath, algorithm) =>
+  new Promise((resolve, reject) => {
+    const hash = createHash(algorithm);
+    const stream = createReadStream(filePath);
+
+    stream.on("error", reject);
+    stream.on("data", (chunk) => hash.update(chunk));
+    stream.on("end", () => resolve(hash.digest("hex")));
+  });
+
 await mkdir(downloadsDir, { recursive: true });
 await mkdir(assetsDir, { recursive: true });
 
@@ -141,6 +153,7 @@ for (const entry of entries) {
 
   const filePath = path.join(downloadsDir, entry.name);
   const fileStat = await stat(filePath);
+  const md5 = await hashFile(filePath, "md5");
 
   files.push({
     os: platform,
@@ -149,6 +162,7 @@ for (const entry of entries) {
     file: entry.name,
     version: extractVersion(entry.name),
     size: formatSize(fileStat.size),
+    md5,
     updatedAt: fileStat.mtime.toISOString(),
   });
 }
