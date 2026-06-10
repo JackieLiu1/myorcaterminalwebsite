@@ -274,11 +274,11 @@
               <button
                 type="button"
                 class="download-button"
-                :aria-haspopup="download.variants.length > 1 ? 'dialog' : null"
+                aria-haspopup="dialog"
                 @click="handleDownload(download)"
               >
                 <span>{{ downloadActionLabel(download) }}</span>
-                <span aria-hidden="true">{{ download.variants.length > 1 ? '▾' : '↓' }}</span>
+                <span aria-hidden="true">▾</span>
               </button>
             </article>
           </div>

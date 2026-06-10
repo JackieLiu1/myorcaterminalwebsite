@@ -25,8 +25,8 @@ const PACKAGE_FORMAT_LABELS = {
 
 const PACKAGE_FORMAT_NOTES = {
   appimage: "适用于主流 Linux 桌面发行版",
-  deb: "适用于 Debian / Ubuntu 系发行版",
-  rpm: "适用于 Fedora / RHEL / openSUSE 系发行版",
+  deb: "适用于 KylinOS / Debian / Ubuntu 系发行版",
+  rpm: "适用于 openEuler / Fedora / RHEL / openSUSE 系发行版",
 };
 
 const PACKAGE_FORMAT_ORDER = new Map([
@@ -495,22 +495,10 @@ createApp({
       return "即将开放";
     },
     downloadActionLabel(download) {
-      if (download.variants.length > 1) return "选择下载版本";
-      return download.ready ? "下载安装包" : "即将开放";
+      return download.ready ? "选择下载版本" : "查看下载状态";
     },
     handleDownload(download) {
-      if (download.variants.length > 1) {
-        this.downloadPicker = download;
-        return;
-      }
-
-      const [variant] = download.variants;
-      if (!variant.ready) {
-        this.showDownloadToast();
-        return;
-      }
-
-      window.open(variant.url, "_blank", "noopener");
+      this.downloadPicker = download;
     },
     guardVariantDownload(event, variant) {
       if (variant.ready) {
