@@ -1,0 +1,8 @@
+{
+  "name": "orcaterminal-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "downloads:manifest": "node scripts/generate-download-manifest.mjs"
+  }
+}
