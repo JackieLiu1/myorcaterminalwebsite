@@ -15,6 +15,8 @@
   --rose: #ff477e;
   --violet: #8468ff;
   --shadow: 0 24px 90px rgba(0, 0, 0, 0.5);
+  --stage-max: 1920px;
+  --stage-side: max(0px, calc((100vw - var(--stage-max)) / 2));
 }
 
 * {
@@ -87,7 +89,7 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 22px clamp(18px, 4vw, 64px);
+  padding: 22px max(clamp(18px, 4vw, 64px), calc(var(--stage-side) + 48px));
   transition:
     background 0.22s ease,
     border-color 0.22s ease,
@@ -199,14 +201,14 @@ button {
   min-height: 88svh;
   overflow: hidden;
   isolation: isolate;
-  padding: 150px clamp(22px, 6vw, 92px) 92px;
+  padding: 150px max(clamp(22px, 6vw, 92px), calc(var(--stage-side) + 76px)) 92px;
 }
 
 .hero-backdrop {
   position: absolute;
-  inset: 0 0 0 auto;
+  inset: 0 var(--stage-side) 0 auto;
   z-index: -3;
-  width: 100%;
+  width: min(100%, var(--stage-max));
   height: 100%;
   object-fit: contain;
   object-position: right center;
@@ -229,11 +231,11 @@ button {
 
 .hero-section::after {
   position: absolute;
-  right: -15%;
+  right: max(-180px, calc(var(--stage-side) - 220px));
   bottom: -42%;
   z-index: -1;
-  width: 62vw;
-  height: 62vw;
+  width: min(62vw, 1040px);
+  height: min(62vw, 1040px);
   min-width: 520px;
   min-height: 520px;
   content: "";
@@ -247,7 +249,7 @@ button {
 
 .hero-glass {
   position: absolute;
-  right: 6vw;
+  right: max(6vw, calc(var(--stage-side) + 96px));
   bottom: 6vh;
   z-index: -1;
   width: min(48vw, 720px);
@@ -387,6 +389,9 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
+  width: min(100%, var(--stage-max));
+  margin-inline: auto;
+  border-inline: 1px solid rgba(88, 224, 255, 0.14);
   border-block: 1px solid rgba(88, 224, 255, 0.14);
   background: rgba(88, 224, 255, 0.09);
 }
@@ -443,6 +448,8 @@ h3 {
 }
 
 .section {
+  width: min(100%, var(--stage-max));
+  margin-inline: auto;
   padding: clamp(78px, 9vw, 132px) clamp(22px, 6vw, 92px);
 }
 
@@ -1186,7 +1193,7 @@ kbd {
   gap: 18px;
   align-items: center;
   justify-content: space-between;
-  padding: 34px clamp(22px, 6vw, 92px);
+  padding: 34px max(clamp(22px, 6vw, 92px), calc(var(--stage-side) + 64px));
   border-top: 1px solid rgba(72, 232, 255, 0.16);
   background: rgba(1, 6, 10, 0.86);
 }
@@ -1236,7 +1243,7 @@ kbd {
 .toast {
   position: fixed;
   right: 22px;
-  bottom: 22px;
+  bottom: 92px;
   z-index: 50;
   max-width: min(420px, calc(100vw - 44px));
   padding: 14px 18px;
@@ -1256,6 +1263,63 @@ kbd {
 .toast--visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 55;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border: 1px solid rgba(0, 240, 255, 0.38);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(0, 240, 255, 0.18), rgba(38, 150, 255, 0.1)),
+    rgba(3, 17, 27, 0.88);
+  color: var(--cyan-soft);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.36);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0, 12px, 0) scale(0.96);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+  backdrop-filter: blur(16px);
+}
+
+.back-to-top svg {
+  width: 22px;
+  height: 22px;
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  border-color: rgba(100, 247, 255, 0.72);
+  background:
+    linear-gradient(145deg, rgba(0, 240, 255, 0.24), rgba(38, 150, 255, 0.15)),
+    rgba(5, 24, 38, 0.94);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.42),
+    0 0 34px rgba(0, 240, 255, 0.14);
+  transform: translate3d(0, -2px, 0) scale(1);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid rgba(100, 247, 255, 0.72);
+  outline-offset: 3px;
 }
 
 @media (max-width: 1120px) {
@@ -1404,6 +1468,19 @@ kbd {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .toast {
+    right: 18px;
+    bottom: 84px;
+    max-width: calc(100vw - 36px);
+  }
+
+  .back-to-top {
+    right: 18px;
+    bottom: 18px;
+    width: 48px;
+    height: 48px;
   }
 
   .footer-meta {

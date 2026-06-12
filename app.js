@@ -302,6 +302,7 @@ createApp({
 
     return {
       isScrolled: false,
+      showBackToTop: false,
       toastVisible: false,
       downloadPicker: null,
       motionObserver: null,
@@ -398,10 +399,12 @@ createApp({
     this.setupScrollMotion();
     this.loadDownloadManifest();
     window.addEventListener("load", this.revealVisibleMotionItems, { once: true });
+    window.addEventListener("resize", this.setScrollState, { passive: true });
     window.addEventListener("resize", this.revealVisibleMotionItems, { passive: true });
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.setScrollState);
+    window.removeEventListener("resize", this.setScrollState);
     window.removeEventListener("resize", this.revealVisibleMotionItems);
     if (this.motionObserver) {
       this.motionObserver.disconnect();
@@ -409,7 +412,21 @@ createApp({
   },
   methods: {
     setScrollState() {
-      this.isScrolled = window.scrollY > 18;
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+
+      this.isScrolled = scrollY > 18;
+      this.showBackToTop = scrollY > Math.max(420, viewportHeight * 0.72);
+    },
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#top`);
+      }
     },
     renderLucideIcons() {
       this.$nextTick(() => {

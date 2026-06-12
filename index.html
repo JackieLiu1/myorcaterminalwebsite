@@ -327,6 +327,17 @@
         对应系统的安装包即将开放下载。
       </div>
 
+      <button
+        type="button"
+        class="back-to-top"
+        :class="{ 'back-to-top--visible': showBackToTop }"
+        :tabindex="showBackToTop ? 0 : -1"
+        aria-label="返回顶部"
+        @click="scrollToTop"
+      >
+        <i data-lucide="arrow-up"></i>
+      </button>
+
       <div
         v-if="downloadPicker"
         class="download-modal"
