@@ -1,6 +1,5 @@
 const DOWNLOAD_DIRECTORY = "./downloads";
 const DOWNLOAD_MANIFEST_URL = `${DOWNLOAD_DIRECTORY}/manifest.json`;
-const EMBEDDED_DOWNLOAD_MANIFEST = window.__ORCATERMINAL_DOWNLOAD_MANIFEST__ || null;
 
 const SITE_INFO = {
   owner: "OrcaTerminal",
@@ -237,6 +236,7 @@ const buildDownloads = (files = []) => {
           id: `${download.key}:${variant.key}:pending`,
           ready: false,
           url: "",
+          version: "",
         };
       }
 
@@ -257,6 +257,7 @@ const buildDownloads = (files = []) => {
           note,
           ready: Boolean(entry.url),
           url: entry.url,
+          version: entry.version || "",
         };
       });
     });
@@ -287,12 +288,9 @@ const { createApp } = Vue;
 
 createApp({
   data() {
-    const embeddedRelease = manifestRelease(EMBEDDED_DOWNLOAD_MANIFEST);
-
     const release = {
       version: "最新版",
       channel: "Stable",
-      ...embeddedRelease,
     };
 
     const siteInfo = {
@@ -300,7 +298,7 @@ createApp({
       year: new Date().getFullYear(),
     };
 
-    const downloads = buildDownloads(manifestFiles(EMBEDDED_DOWNLOAD_MANIFEST));
+    const downloads = buildDownloads();
 
     return {
       isScrolled: false,
@@ -470,7 +468,8 @@ createApp({
     },
     async loadDownloadManifest() {
       try {
-        const response = await fetch(DOWNLOAD_MANIFEST_URL, { cache: "no-store" });
+        const manifestUrl = `${DOWNLOAD_MANIFEST_URL}?t=${Date.now()}`;
+        const response = await fetch(manifestUrl, { cache: "no-store" });
         if (!response.ok) return;
 
         const manifest = await response.json();
@@ -493,6 +492,17 @@ createApp({
       if (readyCount === download.variants.length) return "可下载";
       if (readyCount > 0) return "部分可下载";
       return "即将开放";
+    },
+    downloadVersion(download) {
+      const versions = [
+        ...new Set(download.variants
+          .filter((variant) => variant.ready && variant.version)
+          .map((variant) => variant.version)),
+      ];
+
+      if (versions.length === 1) return versions[0];
+      if (versions.length > 1) return "多个版本";
+      return "待发布";
     },
     downloadActionLabel(download) {
       return download.ready ? "选择下载版本" : "查看下载状态";

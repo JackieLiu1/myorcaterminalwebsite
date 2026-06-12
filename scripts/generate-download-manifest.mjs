@@ -6,9 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const downloadsDir = path.join(rootDir, "downloads");
-const assetsDir = path.join(rootDir, "assets");
 const manifestPath = path.join(downloadsDir, "manifest.json");
-const embeddedManifestPath = path.join(assetsDir, "downloads-manifest.js");
 
 const platformOrder = new Map([
   ["macos", 0],
@@ -136,7 +134,6 @@ const hashFile = (filePath, algorithm) =>
   });
 
 await mkdir(downloadsDir, { recursive: true });
-await mkdir(assetsDir, { recursive: true });
 
 const entries = await readdir(downloadsDir, { withFileTypes: true });
 const files = [];
@@ -195,10 +192,5 @@ const manifest = {
 };
 
 await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
-await writeFile(
-  embeddedManifestPath,
-  `window.__ORCATERMINAL_DOWNLOAD_MANIFEST__ = ${JSON.stringify(manifest, null, 2)};\n`,
-);
 
 console.log(`Generated ${path.relative(rootDir, manifestPath)} with ${files.length} file(s).`);
-console.log(`Generated ${path.relative(rootDir, embeddedManifestPath)} with ${files.length} file(s).`);

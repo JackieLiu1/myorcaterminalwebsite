@@ -14,12 +14,9 @@ You do not need to edit `downloads/manifest.json` by hand.
 3. Deploy the whole site directory, including `index.html`, `app.js`,
    `styles.css`, `assets/`, and `downloads/`.
 
-The command generates both `downloads/manifest.json` and
-`assets/downloads-manifest.js`. The homepage loads the embedded JS manifest
-before `app.js`, then tries to refresh from `downloads/manifest.json` at
-runtime. If an installer file name changes with each release, the manifest
-records the new file name. MD5 checksums are calculated automatically and shown
-beside each download option.
+The command generates `downloads/manifest.json`. The homepage reads that JSON
+at runtime with a cache-busting query string, so this file is the single source
+of truth for download versions, file names, sizes, and MD5 checksums.
 
 ## Expected Release Asset Names
 

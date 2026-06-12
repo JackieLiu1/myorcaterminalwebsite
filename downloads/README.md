@@ -20,10 +20,8 @@ npm run downloads:manifest
 ```
 
 The homepage reads only `downloads/manifest.json`, so `app.js` does not need to
-change for every release. The same command also writes
-`assets/downloads-manifest.js`, which lets the homepage show downloads even if a
-local preview or server blocks the JSON request. MD5 checksums are calculated
-automatically and shown beside each download option.
+change for every release. MD5 checksums are calculated automatically and shown
+beside each download option.
 
 Recognized targets and package formats:
 
