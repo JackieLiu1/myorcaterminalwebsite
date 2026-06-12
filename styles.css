@@ -17,6 +17,7 @@
   --shadow: 0 24px 90px rgba(0, 0, 0, 0.5);
   --stage-max: 1920px;
   --stage-side: max(0px, calc((100vw - var(--stage-max)) / 2));
+  --hero-edge-gap: clamp(24px, 3vw, 72px);
 }
 
 * {
@@ -206,9 +207,9 @@ button {
 
 .hero-backdrop {
   position: absolute;
-  inset: 0 var(--stage-side) 0 auto;
+  inset: 0 calc(var(--stage-side) + var(--hero-edge-gap)) 0 auto;
   z-index: -3;
-  width: min(100%, var(--stage-max));
+  width: min(calc(100% - var(--hero-edge-gap)), calc(var(--stage-max) - var(--hero-edge-gap)));
   height: 100%;
   object-fit: contain;
   object-position: right center;
@@ -700,7 +701,7 @@ kbd {
   grid-template-columns: minmax(540px, 1.2fr) minmax(300px, 0.8fr);
   gap: clamp(30px, 5vw, 70px);
   align-items: center;
-  margin-inline: clamp(22px, 6vw, 92px);
+  margin-inline: auto;
   padding-inline: clamp(18px, 4vw, 44px);
   border-radius: 8px;
 }
@@ -1346,7 +1347,8 @@ kbd {
   }
 
   .file-section {
-    margin-inline: 22px;
+    width: calc(100% - 44px);
+    margin-inline: auto;
   }
 }
 
@@ -1444,7 +1446,8 @@ kbd {
   }
 
   .file-section {
-    margin-inline: 20px;
+    width: calc(100% - 40px);
+    margin-inline: auto;
     padding-inline: 16px;
   }
 
