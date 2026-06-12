@@ -1,19 +1,19 @@
 {
   "release": {
-    "version": "v0.9.10",
+    "version": "v0.9.11",
     "channel": "Stable",
-    "updatedAt": "2026-06-09T08:43:57.000Z"
+    "updatedAt": "2026-06-12T09:56:39.000Z"
   },
   "files": [
     {
       "os": "macos",
       "arch": "arm64",
       "format": "dmg",
-      "file": "OrcaTerminal-0.9.10-macOS-arm64.dmg",
-      "version": "v0.9.10",
+      "file": "OrcaTerminal-0.9.11-macOS-arm64.dmg",
+      "version": "v0.9.11",
       "size": "33 MB",
-      "md5": "3a00a8e20ed25e62adc60ad11fb1f8ea",
-      "updatedAt": "2026-06-09T08:43:57.000Z"
+      "md5": "204143f89957abe0c4c008980fc39311",
+      "updatedAt": "2026-06-12T04:03:32.000Z"
     },
     {
       "os": "windows",
@@ -29,31 +29,31 @@
       "os": "linux",
       "arch": "x64",
       "format": "deb",
-      "file": "orcaterminal-0.9.10-amd64.deb",
-      "version": "v0.9.10",
-      "size": "19 MB",
-      "md5": "002bf19234277624e195a1cdea0f81c7",
-      "updatedAt": "2026-06-04T12:20:17.000Z"
+      "file": "orcaterminal-0.9.11-amd64.deb",
+      "version": "v0.9.11",
+      "size": "20 MB",
+      "md5": "8daa872b1fa0a4bcbc08992a34423700",
+      "updatedAt": "2026-06-12T09:56:39.000Z"
     },
     {
       "os": "linux",
       "arch": "arm64",
       "format": "deb",
-      "file": "orcaterminal-0.9.10-arm64.deb",
-      "version": "v0.9.10",
-      "size": "20 MB",
-      "md5": "893f9a71fcad7f6b4585861c9878c7cc",
-      "updatedAt": "2026-06-04T19:54:34.000Z"
+      "file": "orcaterminal-0.9.11-arm64.deb",
+      "version": "v0.9.11",
+      "size": "21 MB",
+      "md5": "2b7e7e36b82196e779628c83caa15fa6",
+      "updatedAt": "2026-06-12T07:56:59.000Z"
     },
     {
       "os": "linux",
       "arch": "arm64",
       "format": "rpm",
-      "file": "orcaterminal-0.9.10-aarch64.rpm",
-      "version": "v0.9.10",
-      "size": "3.9 MB",
-      "md5": "3013a1eeb9bc9c9a6b25f1be8ca3f965",
-      "updatedAt": "2026-06-08T01:37:19.374Z"
+      "file": "orcaterminal-0.9.11-aarch64.rpm",
+      "version": "v0.9.11",
+      "size": "4.2 MB",
+      "md5": "b02417b5ed79a224065e3919cd7be24d",
+      "updatedAt": "2026-06-12T04:07:04.341Z"
     }
   ]
 }
