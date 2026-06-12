@@ -2,7 +2,7 @@
   "release": {
     "version": "v0.9.11",
     "channel": "Stable",
-    "updatedAt": "2026-06-12T09:56:39.000Z"
+    "updatedAt": "2026-06-12T14:09:17.000Z"
   },
   "files": [
     {
@@ -13,17 +13,17 @@
       "version": "v0.9.11",
       "size": "33 MB",
       "md5": "204143f89957abe0c4c008980fc39311",
-      "updatedAt": "2026-06-12T04:03:32.000Z"
+      "updatedAt": "2026-06-12T14:06:25.142Z"
     },
     {
       "os": "windows",
       "arch": "x64",
       "format": "exe",
-      "file": "OrcaTerminal-0.9.10-Windows-x64.exe",
-      "version": "v0.9.10",
+      "file": "OrcaTerminal-0.9.11-Windows-x64.exe",
+      "version": "v0.9.11",
       "size": "31 MB",
-      "md5": "efd19a6f9a0f15bb2ea12d0aa7934730",
-      "updatedAt": "2026-06-05T01:48:25.000Z"
+      "md5": "0a03ec9b59c1398e53bec2d0c976820c",
+      "updatedAt": "2026-06-12T14:09:17.000Z"
     },
     {
       "os": "linux",
@@ -33,7 +33,17 @@
       "version": "v0.9.11",
       "size": "20 MB",
       "md5": "8daa872b1fa0a4bcbc08992a34423700",
-      "updatedAt": "2026-06-12T09:56:39.000Z"
+      "updatedAt": "2026-06-12T14:06:25.187Z"
+    },
+    {
+      "os": "linux",
+      "arch": "x64",
+      "format": "rpm",
+      "file": "orcaterminal-0.9.11-x86_64.rpm",
+      "version": "v0.9.11",
+      "size": "4.4 MB",
+      "md5": "246de296fffadaf1506a8ef967d3272f",
+      "updatedAt": "2026-06-12T14:06:54.888Z"
     },
     {
       "os": "linux",
@@ -43,7 +53,7 @@
       "version": "v0.9.11",
       "size": "21 MB",
       "md5": "2b7e7e36b82196e779628c83caa15fa6",
-      "updatedAt": "2026-06-12T07:56:59.000Z"
+      "updatedAt": "2026-06-12T14:06:25.217Z"
     },
     {
       "os": "linux",
@@ -53,7 +63,7 @@
       "version": "v0.9.11",
       "size": "4.2 MB",
       "md5": "b02417b5ed79a224065e3919cd7be24d",
-      "updatedAt": "2026-06-12T04:07:04.341Z"
+      "updatedAt": "2026-06-12T14:06:25.157Z"
     }
   ]
 }
