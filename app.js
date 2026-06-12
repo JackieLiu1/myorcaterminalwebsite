@@ -374,7 +374,7 @@ createApp({
         { action: "新建标签页", key: "Cmd+T" },
         { action: "本地终端", key: "Cmd+L" },
         { action: "端口代理", key: "Cmd+P" },
-        { action: "SFTP", key: "Shift+S" },
+        { action: "SFTP", key: "Cmd+Shift+S" },
       ],
       localFiles: [
         { icon: "folder", name: "dist", size: "4.8 MB" },

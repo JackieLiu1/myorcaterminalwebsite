@@ -494,6 +494,10 @@ h3 {
   color: var(--green);
 }
 
+.feature-card .feature-icon {
+  margin-bottom: 22px;
+}
+
 .product-section {
   display: grid;
   grid-template-columns: minmax(300px, 0.85fr) minmax(520px, 1.35fr);
