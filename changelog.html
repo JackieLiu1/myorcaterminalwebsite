@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="OrcaTerminal 更新日志，按版本整理新功能、体验改进和问题修复，帮助用户了解每次升级带来的变化。"
+    />
+    <title>OrcaTerminal 更新日志 - 版本变化与发布说明</title>
+    <link rel="icon" type="image/png" href="./assets/app-icon.png" />
+    <link rel="apple-touch-icon" href="./assets/app-icon.png" />
+    <link rel="preload" as="image" href="./assets/orcaterminal-hero.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="changelog-page">
+    <header class="site-header site-header--solid">
+      <a class="brand" href="./index.html#top" aria-label="OrcaTerminal 首页">
+        <span class="brand-mark">
+          <img class="brand-logo" src="./assets/app-icon.png" alt="" />
+        </span>
+        <span class="brand-name">Orca<span>Terminal</span></span>
+      </a>
+
+      <nav class="top-nav" aria-label="主导航">
+        <a href="./index.html#features">能力</a>
+        <a href="./index.html#product">产品</a>
+        <a href="./index.html#security">安全</a>
+        <a href="./changelog.html" aria-current="page">更新日志</a>
+        <a href="./index.html#download">下载</a>
+      </nav>
+
+      <a class="nav-download" href="./index.html#download">
+        <span>立即下载</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </header>
+
+    <main class="changelog-main">
+      <section class="changelog-hero">
+        <img
+          class="changelog-hero-image"
+          src="./assets/orcaterminal-hero.png"
+          alt="OrcaTerminal 终端、SFTP 和连接管理界面预览"
+        />
+        <div class="changelog-hero-content">
+          <p class="eyebrow">Release notes</p>
+          <h1>OrcaTerminal 更新日志</h1>
+          <p class="hero-copy">
+            这里按版本整理新功能、体验改进和问题修复。内容面向日常使用场景，帮助你快速判断是否需要升级，以及新版能解决什么问题。
+          </p>
+
+          <div class="hero-actions changelog-actions" aria-label="更新日志操作">
+            <a class="primary-action" href="./index.html#download">
+              <span>下载当前稳定版</span>
+              <i data-lucide="download"></i>
+            </a>
+            <a class="secondary-action" href="#timeline">
+              <span>查看历史版本</span>
+              <i data-lucide="arrow-down"></i>
+            </a>
+          </div>
+
+          <dl class="release-status-grid" aria-label="当前发布状态">
+            <div>
+              <dt>当前稳定版</dt>
+              <dd>v0.9.11</dd>
+            </div>
+            <div>
+              <dt>发布日期</dt>
+              <dd>2026-06-12</dd>
+            </div>
+            <div>
+              <dt>支持平台</dt>
+              <dd>macOS / Windows / Linux</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section release-focus-section">
+        <div class="section-heading">
+          <p class="eyebrow">Current stable</p>
+          <h2>v0.9.11 重点变化</h2>
+          <p>
+            这一版把 OrcaTerminal 从核心终端能力推进到更完整的跨平台桌面工具：新增串口会话、动态 SOCKS 转发，并补齐 Windows 与 macOS 发布包。
+          </p>
+        </div>
+
+        <div class="release-focus-grid">
+          <article class="release-focus-card motion-reveal">
+            <span class="feature-icon"><i data-lucide="usb"></i></span>
+            <h3>串口终端会话</h3>
+            <p>
+              支持直接打开串口设备，并保存常用串口配置。Linux 上也补充了串口访问授权流程。
+            </p>
+          </article>
+          <article class="release-focus-card motion-reveal">
+            <span class="feature-icon"><i data-lucide="route"></i></span>
+            <h3>动态 SOCKS 转发</h3>
+            <p>
+              SSH 连接可以作为动态代理使用，更适合需要临时访问远端网络资源的开发和运维场景。
+            </p>
+          </article>
+          <article class="release-focus-card motion-reveal">
+            <span class="feature-icon"><i data-lucide="package-check"></i></span>
+            <h3>跨平台安装包</h3>
+            <p>
+              新增 Windows 和 macOS 发布包，并在打包流程中加入更严格的发布前检查。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section next-release-section">
+        <div class="next-release-panel motion-reveal">
+          <div>
+            <p class="eyebrow">In progress</p>
+            <h2>下一版预览</h2>
+            <p>
+              这些变化已经进入开发分支，但还没有作为稳定版发布。它们会让终端内图片、远程 shell integration 和日常细节更顺手。
+            </p>
+          </div>
+          <ul class="next-release-list" aria-label="下一版预览变化">
+            <li>
+              <span><i data-lucide="image"></i></span>
+              <strong>终端内图片显示</strong>
+              <p>内置 <code>imgcat</code> 命令可直接显示本地图片、管道数据和下载图片。</p>
+            </li>
+            <li>
+              <span><i data-lucide="mouse-pointer-2"></i></span>
+              <strong>图片拖拽导出</strong>
+              <p>终端里的图片可以拖出使用，本地文件会尽量保留原始路径。</p>
+            </li>
+            <li>
+              <span><i data-lucide="square-terminal"></i></span>
+              <strong>SSH shell integration</strong>
+              <p>远程标签页可以更自然地更新标题和当前目录，体验更接近本地终端。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="timeline" class="section changelog-timeline-section">
+        <div class="section-heading">
+          <p class="eyebrow">Version history</p>
+          <h2>历史版本</h2>
+          <p>
+            从早期安装包到 SFTP、跳板机、端口转发和串口能力，OrcaTerminal 的每个版本都围绕真实远程工作流往前推进。
+          </p>
+        </div>
+
+        <div class="release-timeline">
+          <article class="release-entry release-entry--current motion-reveal">
+            <div class="release-entry-meta">
+              <span>当前稳定版</span>
+              <time datetime="2026-06-12">2026-06-12</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.11</h3>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="sparkles"></i>重点变化</h4>
+                  <ul>
+                    <li>新增串口终端会话、可保存的串口配置，以及 Linux 串口访问授权支持。</li>
+                    <li>新增 SSH 动态 SOCKS 转发能力。</li>
+                    <li>新增 Windows 和 macOS 发布包，并加强发布打包前检查。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="wrench"></i>体验改进</h4>
+                  <ul>
+                    <li>降低运行过程中的内存保留，避免提前创建尚未打开的功能面板。</li>
+                    <li>改进终端渲染、内置字体回退、按钮、对话框和标签页细节。</li>
+                    <li>改进 SFTP 传输进度刷新，并把测试检查纳入发布打包流程。</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
+              <time datetime="2026-06-03">2026-06-03</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.10</h3>
+              <ul>
+                <li>SFTP 会话新增跳板机支持。</li>
+                <li>改进重连体验，支持指数退避重试，并提升临时断线后的恢复能力。</li>
+                <li>缓存已打开的远程文件，让重复访问 SFTP 文件时更顺畅。</li>
+                <li>传输进度弹窗现在会显示传输速度，退出应用时也会检查活动 SFTP 会话。</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
+              <time datetime="2026-06-02">2026-06-02</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.9</h3>
+              <ul>
+                <li>新增 ZMODEM 文件传输支持。</li>
+                <li>新增左右分栏的本地/远程 SFTP 文件浏览器，支持拖拽传输、后台进度、文件菜单和冲突处理。</li>
+                <li>新增 SSH 跳板机和 ProxyJump 支持，并提供路由编辑界面。</li>
+                <li>重构 SSH 连接传输层，让分屏、端口转发和高输出场景下的响应更稳定。</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
+              <time datetime="2026-05-26">2026-05-26</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.8</h3>
+              <ul>
+                <li>新增类似 Chrome 的标签页拖拽排序，并带有回弹动画。</li>
+                <li>支持把文件拖到终端里，自动填入文件路径。</li>
+                <li>新增本地 shell integration，用于更新标签页标题和当前目录，并支持 bash 与 zsh 启动注入。</li>
+                <li>改进 SSH 认证、保活、端口转发关闭流程和中键粘贴体验。</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
+              <time datetime="2026-05-21">2026-05-21</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.7</h3>
+              <ul>
+                <li>改进 SSH 会话所有权管理，让不同会话之间的隔离更清晰。</li>
+                <li>在更多会话错误场景下保持远程转发可用。</li>
+                <li>放宽保活断开阈值，减少慢网络环境下不必要的断连。</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
+              <time datetime="2026-05-20">2026-05-20</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.6</h3>
+              <ul>
+                <li>改进 Linux 打包，支持 bundled Qt、插件搜索路径和更简洁的安装布局。</li>
+                <li>新增 bundled Fcitx Qt6 输入法插件，改善 Linux 输入法体验。</li>
+                <li>当新输出进入 <code>scrollback</code> 时，保持当前查看位置稳定。</li>
+                <li>改进终端边距、空白单元格选择、链接悬停刷新、SSH 保活和端口转发可靠性。</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
+              <time datetime="2026-05-19">2026-05-19</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.5</h3>
+              <ul>
+                <li>新增第一批 Linux 和 Windows 安装包，包括 RPM/DEB 包和 Windows NSIS 安装包。</li>
+                <li>扩展终端兼容性，包括备用屏幕、括号粘贴、鼠标协议、OSC 8 链接和 OSC 52 剪贴板。</li>
+                <li>新增应用与终端主题图标、双语构建文档，以及 Linux GitHub Actions 流程。</li>
+                <li>改进性能，包括复用渲染缓存、缓存字体指标和更好的 <code>Ctrl-C</code> 中断处理。</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand brand--footer" href="./index.html#top" aria-label="返回 OrcaTerminal 首页">
+          <span class="brand-mark"><img class="brand-logo" src="./assets/app-icon.png" alt="" /></span>
+          <span class="brand-name">Orca<span>Terminal</span></span>
+        </a>
+        <p>现代化终端工具 · SSH / SFTP / Port Forwarding / Cross Platform</p>
+      </div>
+
+      <div class="footer-meta">
+        <p>© 2026 OrcaTerminal. All rights reserved.</p>
+        <div class="footer-records">
+          <a href="./index.html#download">下载</a>
+          <a href="mailto:liu.yun@linux.dev">联系邮箱：liu.yun@linux.dev</a>
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">湘ICP备18007730号-1</a>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      type="button"
+      class="back-to-top"
+      aria-label="返回顶部"
+      tabindex="-1"
+    >
+      <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="./assets/lucide.min.js"></script>
+    <script>
+      (() => {
+        const header = document.querySelector(".site-header");
+        const backToTop = document.querySelector(".back-to-top");
+
+        const setScrollState = () => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+          header.classList.toggle("site-header--solid", scrollY > 18);
+          backToTop.classList.toggle("back-to-top--visible", scrollY > Math.max(420, viewportHeight * 0.72));
+          backToTop.tabIndex = backToTop.classList.contains("back-to-top--visible") ? 0 : -1;
+        };
+
+        const revealVisibleMotionItems = () => {
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+          const viewportBottom = viewportHeight + 96;
+
+          document.querySelectorAll(".motion-reveal:not(.is-visible)").forEach((item) => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top < viewportBottom && rect.bottom > -96) {
+              item.classList.add("is-visible");
+            }
+          });
+        };
+
+        window.addEventListener("scroll", setScrollState, { passive: true });
+        window.addEventListener("scroll", revealVisibleMotionItems, { passive: true });
+        window.addEventListener("resize", setScrollState, { passive: true });
+        window.addEventListener("resize", revealVisibleMotionItems, { passive: true });
+
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        setScrollState();
+        revealVisibleMotionItems();
+
+        if (window.lucide) {
+          window.lucide.createIcons({
+            attrs: {
+              "stroke-width": 1.8,
+              "aria-hidden": "true",
+            },
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

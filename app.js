@@ -313,6 +313,7 @@ createApp({
         { label: "能力", href: "#features" },
         { label: "产品", href: "#product" },
         { label: "安全", href: "#security" },
+        { label: "更新日志", href: "./changelog.html" },
         { label: "下载", href: "#download" },
       ],
       platforms: [
