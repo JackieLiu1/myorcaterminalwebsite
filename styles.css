@@ -1464,6 +1464,39 @@ kbd {
   overflow-wrap: anywhere;
 }
 
+.release-status-grid dd.platform-logo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  min-height: 46px;
+  overflow-wrap: normal;
+}
+
+.platform-logo {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(100, 247, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 0 18px rgba(0, 240, 255, 0.045);
+}
+
+.platform-logo img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.platform-logo--windows img,
+.platform-logo--linux img {
+  width: 28px;
+  height: 28px;
+}
+
 .release-focus-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1570,13 +1603,16 @@ kbd {
   position: relative;
   display: grid;
   gap: 18px;
+  --release-line-x: 210px;
+  --release-dot-size: 16px;
+  --release-dot-offset: 8px;
 }
 
 .release-timeline::before {
   position: absolute;
   top: 24px;
   bottom: 24px;
-  left: 210px;
+  left: var(--release-line-x);
   width: 1px;
   content: "";
   background: linear-gradient(180deg, rgba(0, 240, 255, 0.45), rgba(132, 104, 255, 0.22), rgba(0, 240, 255, 0.05));
@@ -1587,20 +1623,25 @@ kbd {
   display: grid;
   grid-template-columns: 190px minmax(0, 1fr);
   gap: 38px;
-  padding: clamp(24px, 4vw, 38px);
+  padding: var(--release-entry-pad);
+  --release-entry-pad: clamp(24px, 4vw, 38px);
+  --release-title-size: clamp(28px, 3.2vw, 42px);
 }
 
 .release-entry::before {
   position: absolute;
-  top: 39px;
-  left: 205px;
-  width: 12px;
-  height: 12px;
+  top: calc(var(--release-entry-pad) + 0.525em);
+  left: calc(var(--release-line-x) - var(--release-dot-offset));
+  box-sizing: border-box;
+  width: var(--release-dot-size);
+  height: var(--release-dot-size);
   content: "";
   border: 2px solid rgba(2, 6, 11, 0.96);
   border-radius: 50%;
   background: var(--cyan);
   box-shadow: 0 0 24px rgba(0, 240, 255, 0.4);
+  font-size: var(--release-title-size);
+  transform: translateY(-50%);
 }
 
 .release-entry--current {
@@ -1646,7 +1687,8 @@ kbd {
 .release-entry-body h3 {
   margin-bottom: 18px;
   color: #f4fbff;
-  font-size: clamp(28px, 3.2vw, 42px);
+  font-size: var(--release-title-size);
+  line-height: 1.05;
 }
 
 .release-columns {
@@ -1721,8 +1763,8 @@ kbd {
     margin-inline: auto;
   }
 
-  .release-timeline::before {
-    left: 24px;
+  .release-timeline {
+    --release-line-x: 24px;
   }
 
   .release-entry {
@@ -1732,7 +1774,7 @@ kbd {
   }
 
   .release-entry::before {
-    left: 19px;
+    left: calc(var(--release-line-x) - var(--release-dot-offset));
   }
 }
 
