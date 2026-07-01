@@ -64,11 +64,11 @@
           <dl class="release-status-grid" aria-label="当前发布状态">
             <div>
               <dt>当前稳定版</dt>
-              <dd>v0.9.11</dd>
+              <dd>v0.9.12</dd>
             </div>
             <div>
               <dt>发布日期</dt>
-              <dd>2026-06-12</dd>
+              <dd>2026-07-01</dd>
             </div>
             <div>
               <dt>支持平台</dt>
@@ -91,63 +91,34 @@
       <section class="section release-focus-section">
         <div class="section-heading">
           <p class="eyebrow">Current stable</p>
-          <h2>v0.9.11 重点变化</h2>
+          <h2>v0.9.12 重点变化</h2>
           <p>
-            这一版把 OrcaTerminal 从核心终端能力推进到更完整的跨平台桌面工具：新增串口会话、动态 SOCKS 转发，并补齐 Windows 与 macOS 发布包。
+            这一版继续补强真实远程工作流：新增独立 Telnet 连接、终端内图片显示与拖拽导出、天气状态栏入口，并让远程文件拖入终端更顺手。
           </p>
         </div>
 
         <div class="release-focus-grid">
           <article class="release-focus-card motion-reveal">
-            <span class="feature-icon"><i data-lucide="usb"></i></span>
-            <h3>串口终端会话</h3>
+            <span class="feature-icon"><i data-lucide="terminal"></i></span>
+            <h3>独立 Telnet 连接</h3>
             <p>
-              支持直接打开串口设备，并保存常用串口配置。Linux 上也补充了串口访问授权流程。
+              可从启动页和应用菜单创建 Telnet 连接，并带有对应的连接保存处理和关闭动作。
             </p>
           </article>
           <article class="release-focus-card motion-reveal">
-            <span class="feature-icon"><i data-lucide="route"></i></span>
-            <h3>动态 SOCKS 转发</h3>
+            <span class="feature-icon"><i data-lucide="image"></i></span>
+            <h3>终端内图片显示</h3>
             <p>
-              SSH 连接可以作为动态代理使用，更适合需要临时访问远端网络资源的开发和运维场景。
+              内置 <code>imgcat</code> 支持本地、管道、网络下载和 WebP 图片，终端里的图片也可以拖拽导出。
             </p>
           </article>
           <article class="release-focus-card motion-reveal">
-            <span class="feature-icon"><i data-lucide="package-check"></i></span>
-            <h3>跨平台安装包</h3>
+            <span class="feature-icon"><i data-lucide="cloud-sun"></i></span>
+            <h3>天气状态栏</h3>
             <p>
-              新增 Windows 和 macOS 发布包，并在打包流程中加入更严格的发布前检查。
+              状态栏新增天气入口，支持自动定位、中文城市和拼音搜索、详细弹窗以及天气氛围效果。
             </p>
           </article>
-        </div>
-      </section>
-
-      <section class="section next-release-section">
-        <div class="next-release-panel motion-reveal">
-          <div>
-            <p class="eyebrow">In progress</p>
-            <h2>下一版预览</h2>
-            <p>
-              这些变化已经进入开发分支，但还没有作为稳定版发布。它们会让终端内图片、远程 shell integration 和日常细节更顺手。
-            </p>
-          </div>
-          <ul class="next-release-list" aria-label="下一版预览变化">
-            <li>
-              <span><i data-lucide="image"></i></span>
-              <strong>终端内图片显示</strong>
-              <p>内置 <code>imgcat</code> 命令可直接显示本地图片、管道数据和下载图片。</p>
-            </li>
-            <li>
-              <span><i data-lucide="mouse-pointer-2"></i></span>
-              <strong>图片拖拽导出</strong>
-              <p>终端里的图片可以拖出使用，本地文件会尽量保留原始路径。</p>
-            </li>
-            <li>
-              <span><i data-lucide="square-terminal"></i></span>
-              <strong>SSH shell integration</strong>
-              <p>远程标签页可以更自然地更新标题和当前目录，体验更接近本地终端。</p>
-            </li>
-          </ul>
         </div>
       </section>
 
@@ -164,6 +135,36 @@
           <article class="release-entry release-entry--current motion-reveal">
             <div class="release-entry-meta">
               <span>当前稳定版</span>
+              <time datetime="2026-07-01">2026-07-01</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.12</h3>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="sparkles"></i>重点变化</h4>
+                  <ul>
+                    <li>新增独立 Telnet 连接入口，可从启动页和应用菜单创建连接。</li>
+                    <li>新增终端内图片显示能力，<code>imgcat</code> 支持本地、管道、下载和 WebP 图片。</li>
+                    <li>状态栏新增天气入口，支持自动定位、城市搜索、详细弹窗和天气氛围效果。</li>
+                    <li>把文件拖入远程终端时，可以先通过 SFTP 上传，再插入可用远程路径。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="wrench"></i>体验改进</h4>
+                  <ul>
+                    <li>传输进度弹窗新增队列文件、剩余时间和更稳定的文件行。</li>
+                    <li>终端右键菜单新增分屏动作，分屏时更稳定地保留当前目录。</li>
+                    <li>改进状态栏指标、端口转发面板、主题选择、scrollback 控件和启动页头像。</li>
+                    <li>改进 Linux、Windows 和 macOS 打包流程，补齐多项平台资源和插件细节。</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
               <time datetime="2026-06-12">2026-06-12</time>
             </div>
             <div class="release-entry-body">

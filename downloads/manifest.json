@@ -1,69 +1,79 @@
 {
   "release": {
-    "version": "v0.9.11",
+    "version": "v0.9.12",
     "channel": "Stable",
-    "updatedAt": "2026-06-12T14:09:17.000Z"
+    "updatedAt": "2026-07-01T01:35:41.698Z"
   },
   "files": [
     {
       "os": "macos",
+      "arch": "x64",
+      "format": "dmg",
+      "file": "OrcaTerminal-0.9.12-macOS-x64.dmg",
+      "version": "v0.9.12",
+      "size": "36 MB",
+      "md5": "759c4fa121bc4eb846e44354636d7d09",
+      "updatedAt": "2026-07-01T01:35:39.197Z"
+    },
+    {
+      "os": "macos",
       "arch": "arm64",
       "format": "dmg",
-      "file": "OrcaTerminal-0.9.11-macOS-arm64.dmg",
-      "version": "v0.9.11",
-      "size": "33 MB",
-      "md5": "204143f89957abe0c4c008980fc39311",
-      "updatedAt": "2026-06-12T14:06:25.142Z"
+      "file": "OrcaTerminal-0.9.12-macOS-arm64.dmg",
+      "version": "v0.9.12",
+      "size": "35 MB",
+      "md5": "ad2123c96cdd41511d651757e5f41b0e",
+      "updatedAt": "2026-07-01T01:31:16.017Z"
     },
     {
       "os": "windows",
       "arch": "x64",
       "format": "exe",
-      "file": "OrcaTerminal-0.9.11-Windows-x64.exe",
-      "version": "v0.9.11",
+      "file": "OrcaTerminal-0.9.12-Windows-x64.exe",
+      "version": "v0.9.12",
       "size": "31 MB",
-      "md5": "0a03ec9b59c1398e53bec2d0c976820c",
-      "updatedAt": "2026-06-12T14:09:17.000Z"
+      "md5": "8bf4f057f74593608f79363730479c2a",
+      "updatedAt": "2026-07-01T01:35:41.216Z"
     },
     {
       "os": "linux",
       "arch": "x64",
       "format": "deb",
-      "file": "orcaterminal-0.9.11-amd64.deb",
-      "version": "v0.9.11",
-      "size": "20 MB",
-      "md5": "8daa872b1fa0a4bcbc08992a34423700",
-      "updatedAt": "2026-06-12T14:06:25.187Z"
-    },
-    {
-      "os": "linux",
-      "arch": "x64",
-      "format": "rpm",
-      "file": "orcaterminal-0.9.11-x86_64.rpm",
-      "version": "v0.9.11",
-      "size": "4.4 MB",
-      "md5": "246de296fffadaf1506a8ef967d3272f",
-      "updatedAt": "2026-06-12T14:06:54.888Z"
-    },
-    {
-      "os": "linux",
-      "arch": "arm64",
-      "format": "deb",
-      "file": "orcaterminal-0.9.11-arm64.deb",
-      "version": "v0.9.11",
+      "file": "orcaterminal-0.9.12-amd64.deb",
+      "version": "v0.9.12",
       "size": "21 MB",
-      "md5": "2b7e7e36b82196e779628c83caa15fa6",
-      "updatedAt": "2026-06-12T14:06:25.217Z"
+      "md5": "21519a0f1b0954d4e27e89eda6e78d27",
+      "updatedAt": "2026-07-01T01:35:30.783Z"
+    },
+    {
+      "os": "linux",
+      "arch": "x64",
+      "format": "rpm",
+      "file": "orcaterminal-0.9.12-x86_64.rpm",
+      "version": "v0.9.12",
+      "size": "17 MB",
+      "md5": "4ce52ce79481aebdbaf0aa26f830afb6",
+      "updatedAt": "2026-07-01T01:35:41.698Z"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "format": "deb",
+      "file": "orcaterminal-0.9.12-arm64.deb",
+      "version": "v0.9.12",
+      "size": "21 MB",
+      "md5": "0b1bead66aa84670c617a0620c435f56",
+      "updatedAt": "2026-07-01T01:35:32.554Z"
     },
     {
       "os": "linux",
       "arch": "arm64",
       "format": "rpm",
-      "file": "orcaterminal-0.9.11-aarch64.rpm",
-      "version": "v0.9.11",
-      "size": "4.2 MB",
-      "md5": "b02417b5ed79a224065e3919cd7be24d",
-      "updatedAt": "2026-06-12T14:06:25.157Z"
+      "file": "orcaterminal-0.9.12-aarch64.rpm",
+      "version": "v0.9.12",
+      "size": "16 MB",
+      "md5": "870067402a545f80dfbfde8b08e12ef7",
+      "updatedAt": "2026-07-01T01:35:28.407Z"
     }
   ]
 }
