@@ -384,6 +384,12 @@
               <em>{{ variant.ready ? '下载' : '即将开放' }}</em>
             </a>
           </div>
+
+          <div v-if="downloadPicker.key === 'macos'" class="download-install-note">
+            <strong>macOS 安装提示</strong>
+            <p>如果安装后无法直接打开 OrcaTerminal，请在终端执行：</p>
+            <code>sudo xattr -dr com.apple.quarantine /Applications/OrcaTerminal.app</code>
+          </div>
         </div>
       </div>
     </div>

@@ -1127,6 +1127,40 @@ kbd {
   font-weight: 760;
 }
 
+.download-install-note {
+  display: grid;
+  gap: 8px;
+  margin: 0 18px 18px;
+  padding: 16px;
+  border: 1px solid rgba(255, 189, 46, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 189, 46, 0.075);
+}
+
+.download-install-note strong {
+  color: #ffe18a;
+  font-size: 15px;
+}
+
+.download-install-note p {
+  margin: 0;
+  color: #d5e0e8;
+  line-height: 1.55;
+}
+
+.download-install-note code {
+  display: block;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.24);
+  color: #f4fbff;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 .download-variant--disabled {
   cursor: not-allowed;
   opacity: 0.68;
