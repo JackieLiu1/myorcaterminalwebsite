@@ -61,18 +61,19 @@
             </a>
           </div>
 
+<!-- ORCA_RELEASE_STATUS_START -->
           <dl class="release-status-grid" aria-label="当前发布状态">
             <div>
               <dt>当前稳定版</dt>
-              <dd>v0.9.12</dd>
+              <dd>v0.9.14</dd>
             </div>
             <div>
               <dt>发布日期</dt>
-              <dd>2026-07-01</dd>
+              <dd>2026-09-04</dd>
             </div>
             <div>
               <dt>支持平台</dt>
-              <dd class="platform-logo-list" aria-label="macOS、Windows 和 Linux">
+              <dd class="platform-logo-list" aria-label="macOS、Windows、Linux">
                 <span class="platform-logo platform-logo--macos" role="img" aria-label="macOS">
                   <img src="./assets/icons/apple.svg" alt="" />
                 </span>
@@ -85,42 +86,37 @@
               </dd>
             </div>
           </dl>
+<!-- ORCA_RELEASE_STATUS_END -->
         </div>
       </section>
 
+<!-- ORCA_RELEASE_FOCUS_START -->
       <section class="section release-focus-section">
         <div class="section-heading">
           <p class="eyebrow">Current stable</p>
-          <h2>v0.9.12 重点变化</h2>
-          <p>
-            这一版继续补强真实远程工作流：新增独立 Telnet 连接、终端内图片显示与拖拽导出、天气状态栏入口，并让远程文件拖入终端更顺手。
-          </p>
+          <h2>v0.9.14 重点变化</h2>
+          <p>本次发布包含4 项重点变化、8 项体验改进、6 项修复，以下是各部分的主要内容。</p>
         </div>
 
         <div class="release-focus-grid">
           <article class="release-focus-card motion-reveal">
-            <span class="feature-icon"><i data-lucide="terminal"></i></span>
-            <h3>独立 Telnet 连接</h3>
-            <p>
-              可从启动页和应用菜单创建 Telnet 连接，并带有对应的连接保存处理和关闭动作。
-            </p>
+            <span class="feature-icon"><i data-lucide="sparkles"></i></span>
+            <h3>重点变化</h3>
+            <p>新增带签名校验的应用内更新。OrcaTerminal 可以自动或手动检查更新，从公开发布通道下载对应安装包，完成校验、替换安装并重新启动。</p>
           </article>
           <article class="release-focus-card motion-reveal">
-            <span class="feature-icon"><i data-lucide="image"></i></span>
-            <h3>终端内图片显示</h3>
-            <p>
-              内置 <code>imgcat</code> 支持本地、管道、网络下载和 WebP 图片，终端里的图片也可以拖拽导出。
-            </p>
+            <span class="feature-icon"><i data-lucide="wrench"></i></span>
+            <h3>体验改进</h3>
+            <p>重新设计软件更新体验：使用带品牌元素的进度对话框、清晰的中文状态、独立的设置分组，并把 macOS 的检查更新入口放入应用菜单。</p>
           </article>
           <article class="release-focus-card motion-reveal">
-            <span class="feature-icon"><i data-lucide="cloud-sun"></i></span>
-            <h3>天气状态栏</h3>
-            <p>
-              状态栏新增天气入口，支持自动定位、中文城市和拼音搜索、详细弹窗以及天气氛围效果。
-            </p>
+            <span class="feature-icon"><i data-lucide="shield-check"></i></span>
+            <h3>修复</h3>
+            <p>取消正在建立的 SSH 连接时立即关闭等待界面，不再因等待后台线程停止而出现短暂卡顿。</p>
           </article>
         </div>
       </section>
+<!-- ORCA_RELEASE_FOCUS_END -->
 
       <section id="timeline" class="section changelog-timeline-section">
         <div class="section-heading">
@@ -132,9 +128,108 @@
         </div>
 
         <div class="release-timeline">
+<!-- ORCA_RELEASE_TIMELINE_START -->
           <article class="release-entry release-entry--current motion-reveal">
             <div class="release-entry-meta">
               <span>当前稳定版</span>
+              <time datetime="2026-09-04">2026-09-04</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.14</h3>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="sparkles"></i>重点变化</h4>
+                  <ul>
+                    <li>新增带签名校验的应用内更新。OrcaTerminal 可以自动或手动检查更新，从公开发布通道下载对应安装包，完成校验、替换安装并重新启动。</li>
+                    <li>SSH 端口转发现在会沿用主机保存的跳转路由；Windows 上的终端、SFTP 和端口转发也可以通过跳板机建立连接。</li>
+                    <li>主机编辑器现在会显示实时 TOTP 验证码和倒计时，同时保留完整 <code>otpauth</code>地址的编辑与复制能力。</li>
+                    <li>在支持的桌面环境中新增关闭到系统托盘和退出确认设置，并可从托盘菜单快速打开常用页面。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="wrench"></i>体验改进</h4>
+                  <ul>
+                    <li>重新设计软件更新体验：使用带品牌元素的进度对话框、清晰的中文状态、独立的设置分组，并把 macOS 的检查更新入口放入应用菜单。</li>
+                    <li>WebDAV 同步现在兼容 ETag 较弱或缺失的服务器，通过加锁版本控制继续保证冲突检测。</li>
+                    <li>内置 Inter 作为统一的界面字体，并在终端字体中新增 IBM Plex Mono、 Intel One Mono、Maple Mono 和 DejaVu Sans Mono。</li>
+                    <li>对连接对话框、启动页、Vault、SFTP、端口转发、菜单和终端控件统一了按压、悬停与焦点反馈。</li>
+                    <li>改进天气显示中的雨雪、闪电、云层、月亮、风力响应和动画节奏。</li>
+                    <li>SSH 断开后标签页和回滚内容会保留在原位，并以内联状态展示按阶梯间隔进行的自动重连。</li>
+                    <li>新增 QNAP QTS 主机识别；刷新后保留当前 SFTP 面包屑目录；日期和天气文字会跟随界面语言。</li>
+                    <li>macOS 发布包现在仅面向 Apple Silicon，不再发布 Intel 安装包。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="shield-check"></i>修复</h4>
+                  <ul>
+                    <li>取消正在建立的 SSH 连接时立即关闭等待界面，不再因等待后台线程停止而出现短暂卡顿。</li>
+                    <li>避免端口转发任务在关闭时仍被阻塞所导致的崩溃，并改进路由断开检测，让已停止的隧道及时释放本地端口。</li>
+                    <li>改进 WebDAV 设置、连接稳定性、冲突提示和窗口尺寸，兼容更多服务器实现。</li>
+                    <li>SSH 重连后恢复远程工作目录，并更清楚地区分连接超时、主动取消和库错误。</li>
+                    <li>修复连接与同步对话框中的内容裁切和焦点状态问题，并让禁用的菜单项不再关闭菜单。</li>
+                    <li>软件更新窗口现在会按界面语言选择对应更新日志并正确渲染格式，不再显示 GitHub 自动生成的原始 Markdown。</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
+              <time datetime="2026-08-19">2026-08-19</time>
+            </div>
+            <div class="release-entry-body">
+              <h3>v0.9.13</h3>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="sparkles"></i>重点变化</h4>
+                  <ul>
+                    <li>新增 Vault 工作区：为已保存的主机、SSH 密钥链和端口转发提供统一的导航区域，“关于”、快捷键和设置也嵌入为工作区页面。</li>
+                    <li>新增 SSH 密钥链：可以在应用自有的加密存储里生成、导入和重命名 SSH 密钥，把公钥安装到已保存的主机，并使用托管的密钥完成认证。</li>
+                    <li>新增基于 WebDAV 的加密设置同步，支持连接探测、安全保存凭据，并让设备相关的设置保留在本地。</li>
+                    <li>SSH 新增 Windows 和 macOS 的 X11 转发。转发建立失败时会话仍保持连接。</li>
+                    <li>新增 Catppuccin Mocha、Tokyo Night、Latte 和 Gruvbox 终端主题。</li>
+                    <li>重新设计设置页面：分组自适应布局、用真实终端文字渲染的主题预览、自适应搜索，以及自动保存状态动画。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="wrench"></i>体验改进</h4>
+                  <ul>
+                    <li>界面控件迁移到统一的设计系统：按钮、输入框、下拉框、复选框、菜单和对话框在所有页面保持一致的状态，工作区换用新的炭黑色调和 OrcaTerminal 产品图标。</li>
+                    <li>主机与 SSH 配置的编辑迁移到打磨过的侧边面板，未保存的草稿会保留。</li>
+                    <li>改进跳转路由编辑：支持拖拽插入提示、卡片移动动画、悬停显示删除按钮，滚动更稳定。</li>
+                    <li>SFTP 传输采用流水线化的上传写入和下载读取，吞吐更高，上传失败会给出详细原因。</li>
+                    <li>ZMODEM 传输可以直接由协议帧触发，不再需要手动从菜单发起。</li>
+                    <li>内置一致的应用字体：Windows 终端默认使用 Cascadia Mono，macOS 默认 Menlo，Linux 下字体字重渲染正确。</li>
+                    <li>已保存的主机会显示识别出的远程系统图标，包括国产 Linux 发行版。</li>
+                    <li>打磨菜单指针手势、下拉弹窗位置与悬停反馈、标签页关闭动画，以及传输指标对齐。</li>
+                    <li>改进自定义拖拽时 SFTP 文件表格的 VoiceOver 辅助功能。</li>
+                    <li>Linux 字体探测与平台指标采样移出界面线程，状态栏图表改为批量刷新，界面更流畅。</li>
+                    <li>SSH 凭据控件已翻译为中文。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="shield-check"></i>修复</h4>
+                  <ul>
+                    <li>加固终端转义序列处理：限制 OSC 和 CSI 缓冲长度，拒绝畸形的剪贴板与内嵌图片数据，并在 RIS 复位时完整还原状态。</li>
+                    <li>校验 ZMODEM 传输完整性，包括头和数据 CRC 以及接收位置；下载原子落盘，并拒绝超出限制的传输。</li>
+                    <li>加固 SFTP 下载对符号链接目录和路径逃逸的防护，下载文件原子提交。</li>
+                    <li>载入时修复无效的已保存配置（重复标识符、端口和帧配置），迁移失败时保留已保存的密钥。</li>
+                    <li>保留工作目录、远程路径和拖放文件名中的空白字符。</li>
+                    <li>在 Windows 和 macOS 上可靠上报本地、串口、SSH 和 Telnet 会话的结束原因。</li>
+                    <li>天气查询会为卡住的请求超时，并取消被新查询取代的请求。</li>
+                    <li>双因素认证拒绝畸形的 Base32 密钥，并让预留的验证码过期。</li>
+                    <li>串口会话结束后把 Linux 自定义波特率恢复为有效值。</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </article>
+
+          <article class="release-entry motion-reveal">
+            <div class="release-entry-meta">
+              <span>稳定版</span>
               <time datetime="2026-07-01">2026-07-01</time>
             </div>
             <div class="release-entry-body">
@@ -143,19 +238,42 @@
                 <section>
                   <h4><i data-lucide="sparkles"></i>重点变化</h4>
                   <ul>
-                    <li>新增独立 Telnet 连接入口，可从启动页和应用菜单创建连接。</li>
-                    <li>新增终端内图片显示能力，<code>imgcat</code> 支持本地、管道、下载和 WebP 图片。</li>
-                    <li>状态栏新增天气入口，支持自动定位、城市搜索、详细弹窗和天气氛围效果。</li>
-                    <li>把文件拖入远程终端时，可以先通过 SFTP 上传，再插入可用远程路径。</li>
+                    <li>新增独立 Telnet 连接入口，可从启动页和应用菜单创建连接，并带有对应的连接处理和关闭动作。</li>
+                    <li>新增兼容 iTerm2 图片协议的终端内图片显示能力。内置的 <code>imgcat</code> 命令可以直接在终端里显示本地图片、管道传入的图片数据、从网络下载的图片，以及 WebP 图片。</li>
+                    <li>终端里的图片现在可以拖拽出来。如果图片来自本地 <code>imgcat</code> 文件，会尽量保留原始文件路径；如果图片来自管道、URL、远程 SSH 会话，或者原文件已经不可用，则会自动使用一个本地临时副本。</li>
+                    <li>状态栏新增天气入口，支持基于 IP 自动定位、中文城市与拼音搜索、详细天气弹窗，以及随天气变化的氛围效果。</li>
+                    <li>SSH 会话现在会尽可能自动启用 OrcaTerminal 的 shell integration。远程标签页可以像本地终端一样更新标题和当前目录。</li>
+                    <li>把文件拖入远程终端时，现在可以先通过 SFTP 上传，再插入可用的远程路径。</li>
                   </ul>
                 </section>
                 <section>
                   <h4><i data-lucide="wrench"></i>体验改进</h4>
                   <ul>
-                    <li>传输进度弹窗新增队列文件、剩余时间和更稳定的文件行。</li>
-                    <li>终端右键菜单新增分屏动作，分屏时更稳定地保留当前目录。</li>
-                    <li>改进状态栏指标、端口转发面板、主题选择、scrollback 控件和启动页头像。</li>
-                    <li>改进 Linux、Windows 和 macOS 打包流程，补齐多项平台资源和插件细节。</li>
+                    <li>传输进度弹窗现在会显示队列文件、剩余时间和更稳定的文件行，并改进滚轮交互。</li>
+                    <li>终端右键菜单新增分屏动作，分屏时也会更稳定地保留当前目录。</li>
+                    <li>新增终端铃声设置，并为 Linux 桌面内置 freedesktop 铃声音效。</li>
+                    <li>改进状态栏指标显示，包括更紧凑的尺寸、SVG 渲染的 CPU/内存/网络图标、主网卡速率，以及窗口恢复后的 CPU 状态保留。</li>
+                    <li>优化端口转发面板、连接路由控件、主题选择卡片、scrollback 控件、自定义滚动条、启动页头像和共享右键菜单行。</li>
+                    <li>应用界面文字新增内置 Inter 字体。</li>
+                    <li>降低空闲时的 CPU 唤醒，避免在不需要时持续刷新状态和监控字体变化。</li>
+                    <li>调整标签栏里的活动铃铛图标，让形状更均衡，不再显得过高。</li>
+                    <li>串口连接现在使用独立的 USB 风格图标，更容易和本地终端区分。</li>
+                    <li>macOS 系统菜单已补充中文，包括“关于”“隐藏”“服务”“退出”等菜单项。</li>
+                    <li>改进 SFTP 拖拽反馈，包括更清楚的文件预览、更明显的拖放目标提示，以及取消传输时清理未完成上传。</li>
+                    <li>改进 Linux、Windows 和 macOS 打包流程，包括 Linux 默认 bundled Qt、更干净的 RPM 目录归属、插件 RPATH 修复、拆分 Debian Polkit 包、macOS TLS 插件，以及 Windows 图片和 shell integration 资源。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="shield-check"></i>修复</h4>
+                  <ul>
+                    <li>收紧 ZMODEM 邀请识别，避免普通终端输出误触发传输弹窗。</li>
+                    <li>修复 bash shell integration 提示符标记泄漏，并改进命令文本上报。</li>
+                    <li>修复中文等双宽字符上的光标重绘问题，让闪烁光标视觉上更居中。</li>
+                    <li>修复跨续接单元格选择双宽字符时的复制内容。</li>
+                    <li>修复 OSC 633 shell integration 对 UTF-8 路径和命令文本的解码问题。</li>
+                    <li>改进串口处理，使用原生后端，并隐藏 Windows 上实际不可用的串口。</li>
+                    <li>Linux 串口功能使用的 Polkit 授权提示已补充中文。</li>
+                    <li>加强 SFTP 传输冲突处理，减少覆盖、重命名等场景下的困惑状态。</li>
                   </ul>
                 </section>
               </div>
@@ -175,14 +293,16 @@
                   <ul>
                     <li>新增串口终端会话、可保存的串口配置，以及 Linux 串口访问授权支持。</li>
                     <li>新增 SSH 动态 SOCKS 转发能力。</li>
-                    <li>新增 Windows 和 macOS 发布包，并加强发布打包前检查。</li>
+                    <li>新增 Windows 和 macOS 发布包，并在打包流程中加入更严格的发布前检查。</li>
+                    <li>增加更多内置等宽字体选择，并改进“关于”窗口和安装包中的第三方许可说明。</li>
                   </ul>
                 </section>
                 <section>
                   <h4><i data-lucide="wrench"></i>体验改进</h4>
                   <ul>
-                    <li>降低运行过程中的内存保留，避免提前创建尚未打开的功能面板。</li>
-                    <li>改进终端渲染、内置字体回退、按钮、对话框和标签页细节。</li>
+                    <li>降低运行过程中的内存保留，并避免提前创建尚未打开的功能面板。</li>
+                    <li>改进终端渲染，包括全屏程序边缘空隙、线框字符和内置字体回退效果。</li>
+                    <li>优化大量按钮、对话框、标签页、弹出层和启动页控件，让反馈更统一。</li>
                     <li>改进 SFTP 传输进度刷新，并把测试检查纳入发布打包流程。</li>
                   </ul>
                 </section>
@@ -197,12 +317,25 @@
             </div>
             <div class="release-entry-body">
               <h3>v0.9.10</h3>
-              <ul>
-                <li>SFTP 会话新增跳板机支持。</li>
-                <li>改进重连体验，支持指数退避重试，并提升临时断线后的恢复能力。</li>
-                <li>缓存已打开的远程文件，让重复访问 SFTP 文件时更顺畅。</li>
-                <li>传输进度弹窗现在会显示传输速度，退出应用时也会检查活动 SFTP 会话。</li>
-              </ul>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="sparkles"></i>重点变化</h4>
+                  <ul>
+                    <li>SFTP 会话新增跳板机支持。</li>
+                    <li>改进重连体验，支持指数退避重试，并提升临时断线后的恢复能力。</li>
+                    <li>缓存已打开的远程文件，让重复访问 SFTP 文件时更顺畅。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="wrench"></i>体验改进</h4>
+                  <ul>
+                    <li>传输进度弹窗现在会显示传输速度。</li>
+                    <li>改进终端提示符符号绘制和备用屏幕下的滚动行为。</li>
+                    <li>优化全屏终端程序边缘背景采样，让程序内容和终端背景衔接更自然。</li>
+                    <li>退出应用时会把仍在活动的 SFTP 会话纳入确认提示。</li>
+                  </ul>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -213,12 +346,26 @@
             </div>
             <div class="release-entry-body">
               <h3>v0.9.9</h3>
-              <ul>
-                <li>新增 ZMODEM 文件传输支持。</li>
-                <li>新增左右分栏的本地/远程 SFTP 文件浏览器，支持拖拽传输、后台进度、文件菜单和冲突处理。</li>
-                <li>新增 SSH 跳板机和 ProxyJump 支持，并提供路由编辑界面。</li>
-                <li>重构 SSH 连接传输层，让分屏、端口转发和高输出场景下的响应更稳定。</li>
-              </ul>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="sparkles"></i>重点变化</h4>
+                  <ul>
+                    <li>新增 ZMODEM 文件传输支持。</li>
+                    <li>新增左右分栏的本地/远程 SFTP 文件浏览器，支持拖拽传输、后台传输进度、文件菜单和冲突处理。</li>
+                    <li>新增 SSH 跳板机和 ProxyJump 支持，并提供路由编辑界面。</li>
+                    <li>重构 SSH 连接传输层，让分屏、端口转发和高输出场景下的响应更稳定。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="wrench"></i>体验改进</h4>
+                  <ul>
+                    <li>改进断网、转发卡住和取消认证等场景下的处理。</li>
+                    <li>增加终端核心自检和更多自动化测试覆盖。</li>
+                    <li>更新简体中文翻译，并恢复应用菜单翻译。</li>
+                    <li>改进终端文字边距、滚动条、覆盖层样式和文件表格显示。</li>
+                  </ul>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -229,12 +376,25 @@
             </div>
             <div class="release-entry-body">
               <h3>v0.9.8</h3>
-              <ul>
-                <li>新增类似 Chrome 的标签页拖拽排序，并带有回弹动画。</li>
-                <li>支持把文件拖到终端里，自动填入文件路径。</li>
-                <li>新增本地 shell integration，用于更新标签页标题和当前目录，并支持 bash 与 zsh 启动注入。</li>
-                <li>改进 SSH 认证、保活、端口转发关闭流程和中键粘贴体验。</li>
-              </ul>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="sparkles"></i>重点变化</h4>
+                  <ul>
+                    <li>新增类似 Chrome 的标签页拖拽排序，并带有回弹动画。</li>
+                    <li>支持把文件拖到终端里，自动填入文件路径。</li>
+                    <li>新增本地 shell integration，用于更新标签页标题和当前目录，并支持 bash 与 zsh 启动注入。</li>
+                  </ul>
+                </section>
+                <section>
+                  <h4><i data-lucide="wrench"></i>体验改进</h4>
+                  <ul>
+                    <li>改进 SSH 认证、保活和端口转发关闭流程。</li>
+                    <li>改进反向转发，并让不同平台上的转发行为更加一致。</li>
+                    <li>重新设计“关于”窗口，并展示构建信息。</li>
+                    <li>改进终端 resize 安全性、重绘效率、提示符高度和跨标签页中键粘贴体验。</li>
+                  </ul>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -245,11 +405,16 @@
             </div>
             <div class="release-entry-body">
               <h3>v0.9.7</h3>
-              <ul>
-                <li>改进 SSH 会话所有权管理，让不同会话之间的隔离更清晰。</li>
-                <li>在更多会话错误场景下保持远程转发可用。</li>
-                <li>放宽保活断开阈值，减少慢网络环境下不必要的断连。</li>
-              </ul>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="circle-dot"></i>变化</h4>
+                  <ul>
+                    <li>改进 SSH 会话所有权管理，让不同会话之间的隔离更清晰。</li>
+                    <li>在更多会话错误场景下保持远程转发可用。</li>
+                    <li>放宽保活断开阈值，减少慢网络环境下不必要的断连。</li>
+                  </ul>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -260,12 +425,17 @@
             </div>
             <div class="release-entry-body">
               <h3>v0.9.6</h3>
-              <ul>
-                <li>改进 Linux 打包，支持 bundled Qt、插件搜索路径和更简洁的安装布局。</li>
-                <li>新增 bundled Fcitx Qt6 输入法插件，改善 Linux 输入法体验。</li>
-                <li>当新输出进入 <code>scrollback</code> 时，保持当前查看位置稳定。</li>
-                <li>改进终端边距、空白单元格选择、链接悬停刷新、SSH 保活和端口转发可靠性。</li>
-              </ul>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="circle-dot"></i>变化</h4>
+                  <ul>
+                    <li>改进 Linux 打包，支持 bundled Qt、插件搜索路径和更简洁的安装布局。</li>
+                    <li>新增 bundled Fcitx Qt6 输入法插件，改善 Linux 输入法体验。</li>
+                    <li>当新输出进入 scrollback 时，保持当前查看位置稳定。</li>
+                    <li>改进终端边距、空白单元格选择、链接悬停刷新、SSH 保活和端口转发可靠性。</li>
+                  </ul>
+                </section>
+              </div>
             </div>
           </article>
 
@@ -276,14 +446,20 @@
             </div>
             <div class="release-entry-body">
               <h3>v0.9.5</h3>
-              <ul>
-                <li>新增第一批 Linux 和 Windows 安装包，包括 RPM/DEB 包和 Windows NSIS 安装包。</li>
-                <li>扩展终端兼容性，包括备用屏幕、括号粘贴、鼠标协议、OSC 8 链接和 OSC 52 剪贴板。</li>
-                <li>新增应用与终端主题图标、双语构建文档，以及 Linux GitHub Actions 流程。</li>
-                <li>改进性能，包括复用渲染缓存、缓存字体指标和更好的 <code>Ctrl-C</code> 中断处理。</li>
-              </ul>
+              <div class="release-columns">
+                <section>
+                  <h4><i data-lucide="circle-dot"></i>变化</h4>
+                  <ul>
+                    <li>新增第一批 Linux 和 Windows 安装包，包括安装到 <code>/opt/orcaterminal</code> 的 RPM/DEB 包，以及 Windows NSIS 安装包。</li>
+                    <li>扩展终端兼容性，包括备用屏幕、括号粘贴、鼠标协议、OSC 8 链接、 OSC 52 剪贴板、光标形状、同步输出、Unicode 宽度处理和终端内搜索。</li>
+                    <li>新增应用与终端主题图标、双语构建文档，以及 Linux GitHub Actions 流程。</li>
+                    <li>改进性能，包括复用渲染缓存、缓存字体指标、缓存备用屏幕背景色，以及更好的 Ctrl-C 中断处理。</li>
+                  </ul>
+                </section>
+              </div>
             </div>
           </article>
+<!-- ORCA_RELEASE_TIMELINE_END -->
         </div>
       </section>
     </main>

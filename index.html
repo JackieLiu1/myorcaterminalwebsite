@@ -379,7 +379,9 @@
               <span>
                 <strong>{{ variant.label }}</strong>
                 <small>{{ variant.note }}</small>
-                <code v-if="variant.md5">MD5 {{ variant.md5 }}</code>
+                <code v-if="variant.checksum">
+                  {{ variant.checksumAlgorithm }} {{ variant.checksum }}
+                </code>
               </span>
               <em>{{ variant.ready ? '下载' : '即将开放' }}</em>
             </a>

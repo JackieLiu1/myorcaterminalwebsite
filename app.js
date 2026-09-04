@@ -45,7 +45,7 @@ const DOWNLOAD_CATALOG = [
   {
     os: "macOS",
     key: "macos",
-    arch: "Apple Silicon / Intel",
+    arch: "Apple Silicon",
     description: "适配 macOS 原生桌面体验，终端、SFTP 与连接管理一体化。",
     variants: [
       {
@@ -53,12 +53,6 @@ const DOWNLOAD_CATALOG = [
         arch: "arm64",
         label: "Apple Silicon",
         note: "适用于 M 系列芯片 Mac",
-      },
-      {
-        key: "intel",
-        arch: "x64",
-        label: "Intel",
-        note: "适用于 Intel 芯片 Mac",
       },
     ],
   },
@@ -212,7 +206,8 @@ const normalizeManifestEntry = (entry) => {
     label: entry.label || "",
     note: entry.note || "",
     size: entry.size || "",
-    md5: entry.md5 || "",
+    checksum: entry.sha256 || entry.md5 || "",
+    checksumAlgorithm: entry.sha256 ? "SHA-256" : (entry.md5 ? "MD5" : ""),
     url: resolveDownloadUrl(rawUrl),
     updatedAt: entry.updatedAt || "",
     version: entry.version || "",
@@ -253,7 +248,8 @@ const buildDownloads = (files = []) => {
           ...variant,
           id: entry.id,
           label,
-          md5: entry.md5,
+          checksum: entry.checksum,
+          checksumAlgorithm: entry.checksumAlgorithm,
           note,
           ready: Boolean(entry.url),
           url: entry.url,

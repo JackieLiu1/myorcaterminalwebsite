@@ -1,79 +1,75 @@
 {
   "release": {
-    "version": "v0.9.12",
+    "version": "v0.9.14",
     "channel": "Stable",
-    "updatedAt": "2026-07-01T01:35:41.698Z"
+    "updatedAt": "2026-09-04T00:00:00Z"
   },
   "files": [
-    {
-      "os": "macos",
-      "arch": "x64",
-      "format": "dmg",
-      "file": "OrcaTerminal-0.9.12-macOS-x64.dmg",
-      "version": "v0.9.12",
-      "size": "36 MB",
-      "md5": "759c4fa121bc4eb846e44354636d7d09",
-      "updatedAt": "2026-07-01T01:35:39.197Z"
-    },
-    {
-      "os": "macos",
-      "arch": "arm64",
-      "format": "dmg",
-      "file": "OrcaTerminal-0.9.12-macOS-arm64.dmg",
-      "version": "v0.9.12",
-      "size": "35 MB",
-      "md5": "ad2123c96cdd41511d651757e5f41b0e",
-      "updatedAt": "2026-07-01T01:31:16.017Z"
-    },
     {
       "os": "windows",
       "arch": "x64",
       "format": "exe",
-      "file": "OrcaTerminal-0.9.12-Windows-x64.exe",
-      "version": "v0.9.12",
-      "size": "31 MB",
-      "md5": "8bf4f057f74593608f79363730479c2a",
-      "updatedAt": "2026-07-01T01:35:41.216Z"
+      "file": "OrcaTerminal-0.9.14-Windows-x64.exe",
+      "url": "https://github.com/JackieLiu1/orcaterminal-releases/releases/download/v0.9.14/OrcaTerminal-0.9.14-Windows-x64.exe",
+      "version": "v0.9.14",
+      "size": "32 MB",
+      "sha256": "e03155eed00f9758c4b1be0f24ed78e1f38cfd36475d52cdd6819ca407dee811",
+      "updatedAt": "2026-09-04T00:00:00Z"
     },
     {
-      "os": "linux",
-      "arch": "x64",
-      "format": "deb",
-      "file": "orcaterminal-0.9.12-amd64.deb",
-      "version": "v0.9.12",
-      "size": "21 MB",
-      "md5": "21519a0f1b0954d4e27e89eda6e78d27",
-      "updatedAt": "2026-07-01T01:35:30.783Z"
-    },
-    {
-      "os": "linux",
-      "arch": "x64",
-      "format": "rpm",
-      "file": "orcaterminal-0.9.12-x86_64.rpm",
-      "version": "v0.9.12",
-      "size": "17 MB",
-      "md5": "4ce52ce79481aebdbaf0aa26f830afb6",
-      "updatedAt": "2026-07-01T01:35:41.698Z"
-    },
-    {
-      "os": "linux",
+      "os": "macos",
       "arch": "arm64",
-      "format": "deb",
-      "file": "orcaterminal-0.9.12-arm64.deb",
-      "version": "v0.9.12",
-      "size": "21 MB",
-      "md5": "0b1bead66aa84670c617a0620c435f56",
-      "updatedAt": "2026-07-01T01:35:32.554Z"
+      "format": "dmg",
+      "file": "OrcaTerminal-0.9.14-macOS-arm64.dmg",
+      "url": "https://github.com/JackieLiu1/orcaterminal-releases/releases/download/v0.9.14/OrcaTerminal-0.9.14-macOS-arm64.dmg",
+      "version": "v0.9.14",
+      "size": "37 MB",
+      "sha256": "6cc346fe172eb2734924c6b449f57d175074dc2035a200b759fd8b20f1d20beb",
+      "updatedAt": "2026-09-04T00:00:00Z"
     },
     {
       "os": "linux",
       "arch": "arm64",
       "format": "rpm",
-      "file": "orcaterminal-0.9.12-aarch64.rpm",
-      "version": "v0.9.12",
-      "size": "16 MB",
-      "md5": "870067402a545f80dfbfde8b08e12ef7",
-      "updatedAt": "2026-07-01T01:35:28.407Z"
+      "file": "orcaterminal-0.9.14-aarch64.rpm",
+      "url": "https://github.com/JackieLiu1/orcaterminal-releases/releases/download/v0.9.14/orcaterminal-0.9.14-aarch64.rpm",
+      "version": "v0.9.14",
+      "size": "32 MB",
+      "sha256": "ae033f1a196e1a1e8daff7acdb5bc8d51c9315dc92512846fe3ec34d544b150d",
+      "updatedAt": "2026-09-04T00:00:00Z"
+    },
+    {
+      "os": "linux",
+      "arch": "x64",
+      "format": "deb",
+      "file": "orcaterminal-0.9.14-amd64.deb",
+      "url": "https://github.com/JackieLiu1/orcaterminal-releases/releases/download/v0.9.14/orcaterminal-0.9.14-amd64.deb",
+      "version": "v0.9.14",
+      "size": "42 MB",
+      "sha256": "2a29e27bea8d6fe0f269d78819278a298c2649ea60fa4f4acc5e2bb71a0752e0",
+      "updatedAt": "2026-09-04T00:00:00Z"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "format": "deb",
+      "file": "orcaterminal-0.9.14-arm64.deb",
+      "url": "https://github.com/JackieLiu1/orcaterminal-releases/releases/download/v0.9.14/orcaterminal-0.9.14-arm64.deb",
+      "version": "v0.9.14",
+      "size": "30 MB",
+      "sha256": "2e40171948c2c9c4688d3727f5a6dc2ae0acee2f98609f36fd28d5dbd933eeb3",
+      "updatedAt": "2026-09-04T00:00:00Z"
+    },
+    {
+      "os": "linux",
+      "arch": "x64",
+      "format": "rpm",
+      "file": "orcaterminal-0.9.14-x86_64.rpm",
+      "url": "https://github.com/JackieLiu1/orcaterminal-releases/releases/download/v0.9.14/orcaterminal-0.9.14-x86_64.rpm",
+      "version": "v0.9.14",
+      "size": "32 MB",
+      "sha256": "2bb3410c55d395fe497455795dd37c556b1b634016f8f6b3e1889e5a814c638d",
+      "updatedAt": "2026-09-04T00:00:00Z"
     }
   ]
 }
